@@ -38,7 +38,7 @@ export class CoffeesService {
       ...createCoffeeInput,
       flavors,
     });
-    const newCoffee = this.coffeesRepository.save(coffee);
+    const newCoffee = await this.coffeesRepository.save(coffee);
     this.pubSub.publish('coffeeAdded', { coffeeAdded: newCoffee });
     return newCoffee;
   }
