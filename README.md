@@ -6,11 +6,11 @@
 
 ```gql
 {
-	__type(name: "CoffeeType") {
-		enumValues {
-			name
-		}
-	}
+  __type(name: "CoffeeType") {
+    enumValues {
+      name
+    }
+  }
 }
 ```
 
@@ -20,15 +20,15 @@
 
 ```gql
 {
-	drinks {
-		... on Tea {
-			name
-		}
-		... on Coffee {
-			name
-			brand
-		}
-	}
+  drinks {
+    ... on Tea {
+      name
+    }
+    ... on Coffee {
+      name
+      brand
+    }
+  }
 }
 ```
 
@@ -38,17 +38,17 @@
 
 ```gql
 {
-	coffees {
-		id
-		name
-		brand
-		flavors {
+  coffees {
+    id
+    name
+    brand
+    flavors {
       id
       name
     }
-		type
-		createdAt
-	}
+    type
+    createdAt
+  }
 }
 ```
 
@@ -56,15 +56,15 @@
 
 ```gql
 query($coffeeId: ID!) {
-	coffee(id: $coffeeId) {
-		id
-		name
-		brand
-		flavors {
-			id
-			name
-		}
-	}
+  coffee(id: $coffeeId) {
+    id
+    name
+    brand
+    flavors {
+      id
+      name
+    }
+  }
 }
 ```
 
@@ -79,21 +79,21 @@ query($coffeeId: ID!) {
 
 ```gql
 mutation {
-	createCoffee(createCoffeeInput: {
-		name: "Lorem",
-		brand: "Buddybrew",
-		flavors: ["chocolate"],
-		type: ARABICA
-	}) {
-		id
-		name
-		brand
-		flavors {
-			id
-			name
-		}
-		type
-	}
+  createCoffee(createCoffeeInput: {
+    name: "Lorem",
+    brand: "Buddybrew",
+    flavors: ["chocolate"],
+    type: ARABICA
+  }) {
+    id
+    name
+    brand
+    flavors {
+      id
+      name
+    }
+    type
+  }
 }
 ```
 
@@ -101,11 +101,11 @@ mutation {
 
 ```gql
 mutation {
-	updateCoffee(id: 1, updateCoffeeInput: {
-		brand: "Ipsum",
-	}) {
-		id
-	}
+  updateCoffee(id: 1, updateCoffeeInput: {
+    brand: "Ipsum",
+  }) {
+    id
+  }
 }
 ```
 
@@ -113,9 +113,9 @@ mutation {
 
 ```gql
 mutation {
-	removeCoffee(id: 1) {
-		name
-	}
+  removeCoffee(id: 1) {
+    name
+  }
 }
 ```
 
